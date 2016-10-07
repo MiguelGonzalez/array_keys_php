@@ -11,21 +11,9 @@
 */
 function array_keys_php($array, $search_value = null, $strict = false) {
 
-	$seEstaRealizandoUnaBusqueda = function($numArgumentos) {
-		return $numArgumentos > 1;
-	};
+	/* Funciones anónimas de ayuda */
 
-	$esIgualValorBusqueda = function($valor) use ($search_value, $strict) {
-		if(!$strict && $valor == $search_value) {
-			return true;
-		} else if($strict && $valor === $search_value) {
-			return true;
-		}
-
-		return false;
-	};
-
- 	$validarParametrosEntrada = function() use ($array, $search_value, $strict) {
+	$validarParametrosEntrada = function() use ($array, $search_value, $strict) {
 		if(!is_array($array)) {
     		trigger_error('Warning: array_keys() expects parameter 1 to be array, ' .
     				gettype($array) . ' given', E_USER_WARNING);
@@ -43,14 +31,30 @@ function array_keys_php($array, $search_value = null, $strict = false) {
 	 	return true;
 	};
 
- 	if(! $validarParametrosEntrada()) {
+	$seEstaRealizandoUnaBusqueda = function($numArgumentos) {
+		return $numArgumentos > 1;
+	};
+
+	$esIgualValorBusqueda = function($valor) use ($search_value, $strict) {
+		if(!$strict && $valor == $search_value) {
+			return true;
+		} else if($strict && $valor === $search_value) {
+			return true;
+		}
+
+		return false;
+	};
+
+	/* Implementación */ 
+
+	if(! $validarParametrosEntrada()) {
  		return null;
  	}
 
  	$output = array();
 
  	foreach($array as $key => $value) {
- 		if($seEstaRealizandoUnaBusqueda(func_num_args())) {
+ 		if($seEstaRealizandoUnaBusqueda(func_num_args()) ) {
  			if($esIgualValorBusqueda($array[$key])) {
 				array_push($output, $key);
  			}
@@ -60,4 +64,6 @@ function array_keys_php($array, $search_value = null, $strict = false) {
  	}
 
  	return $output;
+
+
 }
