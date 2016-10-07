@@ -18,4 +18,11 @@ class validacionParametrosEntradaTest extends PHPTest_Unit {
 		array_keys_php(null);
 		array_keys_php("");
 	}
+
+	/**
+	 * @expectedException PHPUnit_Framework_Error_Warning
+	*/
+	public function testLanzarErrorSiTercerParametroNoEsArray() {
+		array_keys_php(array(), null, array());
+	}
 }
