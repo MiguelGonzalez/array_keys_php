@@ -1,7 +1,7 @@
 <?php
 	
 
-	 function array_keys_php ($array ,$search_value = null ,$strict = false) {
+	 function array_keys_php ($array, $search_value = null, $strict = false) {
 
 	 	$validarParametrosEntrada = function() use ($array, $search_value, $strict) {
  			if(!is_array($array)) {
@@ -23,7 +23,16 @@
 	 	$output = array();
 
 	 	foreach($array as $key => $value) {
-			array_push($output, $key);
+	 		// Si se pasa más de un parámetro se está realizando una búsqueda
+	 		if(func_num_args() > 1) {
+	 			if(!$strict && $array[$key] == $search_value) {
+	 				array_push($output, $key);
+	 			} else if($strict && $array[$key] === $search_value) {
+	 				array_push($output, $key);
+	 			}
+	 		} else {
+	 			array_push($output, $key);
+	 		}
 	 	}
 
 	 	return $output;
