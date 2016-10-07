@@ -16,8 +16,15 @@ class validacionParametrosEntradaTest extends PHPTest_Unit {
 	*/
 	public function testLanzarErrorSiPrimerParametroNoEsArray() {
 		array_keys_php(null);
+	}
+
+	/**
+	 * @expectedException PHPUnit_Framework_Error_Warning
+	*/
+	public function testLanzarErrorSiPrimerParametroNoEsArrayDos() {
 		array_keys_php("");
 	}
+
 
 	/**
 	 * @expectedException PHPUnit_Framework_Error_Warning
