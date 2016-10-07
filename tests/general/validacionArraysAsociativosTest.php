@@ -21,7 +21,7 @@ class validacionArraysAsociativosTest extends PHPTest_Unit {
 
 		$this->assertEquals($expected, $output);
 	}
-/*
+
 	public function testArrayAsociativoMixed() {
 		$input = array('a'=>1, 2=>2, 'c'=>3);
 
@@ -29,5 +29,14 @@ class validacionArraysAsociativosTest extends PHPTest_Unit {
 		$expected = array('a', 2, 'c');
 
 		$this->assertEquals($expected, $output);
-	}*/
+	}
+
+	public function testArrayAsociativoMixedConArray() {
+		$input = array('a'=>1, 2=>2, array());
+
+		$output = array_keys_php($input);
+		$expected = array_keys('a', 2, 3);
+
+		$this->assertEquals($expected, $output);
+	}
 }

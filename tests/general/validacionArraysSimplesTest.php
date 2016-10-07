@@ -16,23 +16,26 @@ class validacionArraysSimplesTest extends PHPTest_Unit {
 		$input = array(1, 2, 3);
 
 		$output = array_keys_php($input);
+		$expected = array(0, 1, 2);
 
-		$this->assertEquals($input, $output);
+		$this->assertEquals($expected, $output);
 	}
 
 	public function testArrayCadenas() {
 		$input = array('a', 'b', 'c');
 
 		$output = array_keys_php($input);
+		$expected = array(0, 1, 2);
 
-		$this->assertEquals($input, $output);
+		$this->assertEquals($expected, $output);
 	}
 
 	public function testArrayMixed() {
 		$input = array('a', 2, 'c');
 
 		$output = array_keys_php($input);
+		$expected = array(0, 1, 2);
 
-		$this->assertEquals($input, $output);
+		$this->assertEquals($expected, $output);
 	}
 }
