@@ -56,14 +56,12 @@ function array_keys_php($array, $search_value = null, $strict = false) {
  	foreach($array as $key => $value) {
  		if($seEstaRealizandoUnaBusqueda(func_num_args()) ) {
  			if($esIgualValorBusqueda($array[$key])) {
-				array_push($output, $key);
+				$output[] =  $key;
  			}
  		} else {
- 			array_push($output, $key);
+ 			$output[] =  $key;
  		}
  	}
 
  	return $output;
-
-
 }
