@@ -35,7 +35,7 @@ class validacionArraysAsociativosTest extends PHPTest_Unit {
 		$input = array('a'=>1, 2=>2, array());
 
 		$output = array_keys_php($input);
-		$expected = array_keys('a', 2, 3);
+		$expected = array('a', 2, 3);
 
 		$this->assertEquals($expected, $output);
 	}
