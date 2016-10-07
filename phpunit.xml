@@ -12,6 +12,7 @@
         <testsuite name="General">
             <file>tests/general/existeFuncionTest.php</file>
             <file>tests/general/validacionParametrosEntradaTest.php</file>
+            <file>tests/general/validacionArraysSimplesTest.php</file>
         </testsuite>
 	</testsuites>
      <filter>
