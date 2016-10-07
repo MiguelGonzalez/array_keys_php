@@ -13,6 +13,7 @@
             <file>tests/general/existeFuncionTest.php</file>
             <file>tests/general/validacionParametrosEntradaTest.php</file>
             <file>tests/general/validacionArraysSimplesTest.php</file>
+            <file>tests/general/validacionArraysAsociativosTest.php</file>
         </testsuite>
 	</testsuites>
      <filter>

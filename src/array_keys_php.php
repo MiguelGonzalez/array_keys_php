@@ -20,5 +20,21 @@
 	 		return null;
 	 	}
 
-	 	return $array;
+	 	$output = array();
+
+	 	foreach($array as $key => $value) {
+	 		if(is_int($key)) {
+	 			if($array[$key] === $value) {
+	 				// No es asociativo
+	 				array_push($output, $value);
+	 			} else {
+	 				// Es asociativo
+	 				array_push($output, $key);
+	 			}
+	 		} else {
+		 		array_push($output, $key);
+	 		}
+	 	}
+
+	 	return $output;
 	 }
